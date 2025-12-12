@@ -19,14 +19,20 @@ export async function create(req, res) {
     }
 }
 export async function updateOneField(req, res) {
-    try{
+    try {
         const transaction = await Transaction.findByIdAndUpdate(
             req.params.id,
-            {$set: {[req.params.itemToUP]: req.body.toUp}},
-            {new: true})
+            {$set: {[req.params.itemToUp]: req.body.toUp}},
+            {new: true}
+        );
+        if (!transaction) {
+            return res.status(404).json({error: "Transaction not found"});
+        }
 
-        } catch (err){
-        res.status(500).json({error: err});
+        res.status(200).json(transaction);
+
+    } catch (err) {
+        res.status(500).json({error: err.message});
     }
 }
 export async function updateTransaction(req, res) {
