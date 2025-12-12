@@ -1,0 +1,13 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: gray;
+}
+#transaction-content{
+    border: 1px solid black;
+}
+tr{
+    border: 1px solid black;
+}
+td{
+    border: 1px solid black;
+}

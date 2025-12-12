@@ -1,0 +1,15 @@
+# Node
+**/node_modules
+
+# Secrets and configs
+**/*.env
+
+# Data
+**/data
+
+# IDE
+.direnv
+.idea
+
+# Local DB
+.mongo
